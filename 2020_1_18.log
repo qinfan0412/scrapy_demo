@@ -1,0 +1,864 @@
+2020-01-18 14:06:15 [scrapy.utils.log] INFO: Scrapy 1.8.0 started (bot: scrapy_demo)
+2020-01-18 14:06:15 [scrapy.utils.log] INFO: Versions: lxml 4.4.2.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.10.0, Python 3.7.5 (default, Nov  1 2019, 02:16:38) - [Clang 10.0.0 (clang-1000.11.45.5)], pyOpenSSL 19.0.0 (OpenSSL 1.1.0j  20 Nov 2018), cryptography 2.4.2, Platform Darwin-17.7.0-x86_64-i386-64bit
+2020-01-18 14:06:15 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'scrapy_demo', 'COOKIES_ENABLED': False, 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'LOG_FILE': '2020_1_18.log', 'NEWSPIDER_MODULE': 'scrapy_demo.spiders', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'SPIDER_MODULES': ['scrapy_demo.spiders']}
+2020-01-18 14:06:15 [scrapy.extensions.telnet] INFO: Telnet Password: fb0ccdb3c6d09fd4
+2020-01-18 14:06:15 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2020-01-18 14:06:15 [biquge] INFO: Reading start URLs from redis key 'biquge:start_urls' (batch size: 16, encoding: utf-8
+2020-01-18 14:06:15 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy_demo.middlewares.MayiProxyMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-01-18 14:06:15 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-01-18 14:06:15 [scrapy.middleware] INFO: Enabled item pipelines:
+['scrapy_demo.pipelines.CsdnBlogApiPipeline']
+2020-01-18 14:06:15 [scrapy.core.engine] INFO: Spider opened
+2020-01-18 14:06:15 [biquge] DEBUG: Resuming crawl (5326 requests scheduled)
+2020-01-18 14:06:15 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-01-18 14:06:15 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6027
+2020-01-18 14:06:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75265.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75259.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75272.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75270.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75267.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:16 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75265.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第八百八十五章 突如其来的公告.txt'
+2020-01-18 14:06:16 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75259.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第八百八十三章 菊花被爆.txt'
+2020-01-18 14:06:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75262.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:16 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75272.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第八百八十九章 待援.txt'
+2020-01-18 14:06:16 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75270.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第八百八十八章 逃遁.txt'
+2020-01-18 14:06:16 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75267.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第八百八十六章 显如.txt'
+2020-01-18 14:06:16 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75262.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第八百八十四章 突进.txt'
+2020-01-18 14:06:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75281.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75279.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75286.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:17 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75281.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第八百九十三章 惊魂一瞬.txt'
+2020-01-18 14:06:17 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75279.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第八百九十二章 危机.txt'
+2020-01-18 14:06:17 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75286.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第八百九十五章 得与失.txt'
+2020-01-18 14:06:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75276.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:17 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75276.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第八百九十一章 反应.txt'
+2020-01-18 14:06:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75290.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75284.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:17 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75290.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第八百九十六章 疯狂的收获.txt'
+2020-01-18 14:06:17 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75284.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第八百九十四章 落幕.txt'
+2020-01-18 14:06:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75291.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75296.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75293.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:17 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75291.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第八百九十七章 天机阁.txt'
+2020-01-18 14:06:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75269.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:17 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75296.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第八百九十九章 上杉谦信的命运.txt'
+2020-01-18 14:06:17 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75293.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第八百九十八章 诓骗.txt'
+2020-01-18 14:06:17 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75269.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第八百八十七章 混战.txt'
+2020-01-18 14:06:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75302.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:18 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75302.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百零一章 恶人.txt'
+2020-01-18 14:06:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75306.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:18 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75306.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百零三章 神使卫队.txt'
+2020-01-18 14:06:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75307.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75309.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75310.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:18 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75307.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百零四章 坑爹的卫队.txt'
+2020-01-18 14:06:18 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75309.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百零五章 长安城.txt'
+2020-01-18 14:06:18 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75310.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百零六章 王允.txt'
+2020-01-18 14:06:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75313.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75304.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:19 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75313.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百零七章 刁难.txt'
+2020-01-18 14:06:19 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75304.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百零二章 意外之喜.txt'
+2020-01-18 14:06:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75315.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:19 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75315.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百零八章 各怀心机.txt'
+2020-01-18 14:06:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75316.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75319.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:19 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75316.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百零九章 蔡文姬.txt'
+2020-01-18 14:06:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75317.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:19 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75319.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百一十一章 悄然离开.txt'
+2020-01-18 14:06:19 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75317.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百一十章 内奸.txt'
+2020-01-18 14:06:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75321.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75320.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:19 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75321.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百一十三章 相互妥协.txt'
+2020-01-18 14:06:19 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75320.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百一十二章 变故.txt'
+2020-01-18 14:06:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75323.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:20 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75323.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百一十四章 原委.txt'
+2020-01-18 14:06:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75327.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75325.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:20 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75327.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百一十六章 夜袭.txt'
+2020-01-18 14:06:20 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75325.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百一十五章 杀机.txt'
+2020-01-18 14:06:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75331.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75334.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:20 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75331.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百一十七章 败走.txt'
+2020-01-18 14:06:20 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75334.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百一十九章 噬魂散.txt'
+2020-01-18 14:06:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75333.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:20 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75333.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百一十八章 阴招.txt'
+2020-01-18 14:06:20 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET http://safe.zj.189.cn/notrecord//?source=d3d3LnhiaXF1Z2UubGEvMC85My83NTI5OC5odG1s&tagid=10011011&city=3540992> from <GET http://www.xbiquge.la/0/93/75298.html>
+2020-01-18 14:06:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75340.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75335.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75337.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:21 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75340.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百二十二章 计划拦截.txt'
+2020-01-18 14:06:21 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75335.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百二十章 意外消息.txt'
+2020-01-18 14:06:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75342.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:21 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75337.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百二十一章 返回.txt'
+2020-01-18 14:06:21 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75342.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百二十三章 惊讶.txt'
+2020-01-18 14:06:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75343.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:21 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75343.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百二十四章 值与不值.txt'
+2020-01-18 14:06:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75344.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:21 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75344.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百二十五章 激怒.txt'
+2020-01-18 14:06:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75347.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:21 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75347.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百二十六章 强冲.txt'
+2020-01-18 14:06:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75348.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75352.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75350.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:21 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75348.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百二十七章 铁甲.txt'
+2020-01-18 14:06:21 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75352.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百二十九章 空城计.txt'
+2020-01-18 14:06:22 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75350.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百二十八章 逃离.txt'
+2020-01-18 14:06:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75359.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75357.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:22 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75359.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百三十一章 拒绝与答应.txt'
+2020-01-18 14:06:22 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75357.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百三十章 嫉妒.txt'
+2020-01-18 14:06:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75361.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75363.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:22 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://safe.zj.189.cn/notrecord//?source=d3d3LnhiaXF1Z2UubGEvMC85My83NTI5OC5odG1s&tagid=10011011&city=3540992> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:22 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75361.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百三十二章 返回.txt'
+2020-01-18 14:06:22 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75363.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百三十三章 兖州易主.txt'
+2020-01-18 14:06:22 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://safe.zj.189.cn/notrecord//?source=d3d3LnhiaXF1Z2UubGEvMC85My83NTI5OC5odG1s&tagid=10011011&city=3540992>: HTTP status code is not handled or not allowed
+2020-01-18 14:06:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75367.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:22 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75367.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百三十五章 董冰玉的选择.txt'
+2020-01-18 14:06:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75365.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75370.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:22 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75365.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百三十四章 取舍.txt'
+2020-01-18 14:06:22 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75370.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百三十六章 决定.txt'
+2020-01-18 14:06:23 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75374.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:23 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75377.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:23 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75374.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百三十七章 接管.txt'
+2020-01-18 14:06:23 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75377.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百三十九章 羡慕.txt'
+2020-01-18 14:06:23 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75376.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:23 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75378.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:23 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75376.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百三十八章 求生之志.txt'
+2020-01-18 14:06:23 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET http://safe.zj.189.cn/notrecord//?source=d3d3LnhiaXF1Z2UubGEvMC85My83NTM4OC5odG1s&tagid=10011011&city=3540740> from <GET http://www.xbiquge.la/0/93/75388.html>
+2020-01-18 14:06:23 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75378.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百四十章 烽烟城起烽烟.txt'
+2020-01-18 14:06:23 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75383.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:23 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75383.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百四十一章 战场上的琴声.txt'
+2020-01-18 14:06:23 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75386.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:23 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75385.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:23 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75386.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百四十三章 逃走.txt'
+2020-01-18 14:06:23 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75389.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:23 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75385.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百四十二章 将对将.txt'
+2020-01-18 14:06:23 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75389.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百四十五章 应对.txt'
+2020-01-18 14:06:24 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75393.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:24 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75391.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:24 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75393.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百四十七章 诸侯之战.txt'
+2020-01-18 14:06:24 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75396.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:24 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75391.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百四十六章 对持.txt'
+2020-01-18 14:06:24 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75395.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:24 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75396.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百四十九章 无奈撤退.txt'
+2020-01-18 14:06:24 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/74935.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:06:24 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/74937.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:06:24 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75395.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百四十八章 被逼攻城.txt'
+2020-01-18 14:06:24 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/95/74935.html> (referer: http://www.xbiquge.la/0/95/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/进化的四十六亿重奏_ 第一章 最初的细胞.txt'
+2020-01-18 14:06:24 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/95/74937.html> (referer: http://www.xbiquge.la/0/95/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/进化的四十六亿重奏_ 第二章 最初之眼.txt'
+2020-01-18 14:06:24 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/74938.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:06:24 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET http://safe.zj.189.cn/notrecord//?source=d3d3LnhiaXF1Z2UubGEvMC85NS83NDk0Ny5odG1s&tagid=10011011&city=3539456> from <GET http://www.xbiquge.la/0/95/74947.html>
+2020-01-18 14:06:24 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/74940.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:06:24 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/93/75397.html> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:24 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/95/74938.html> (referer: http://www.xbiquge.la/0/95/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/进化的四十六亿重奏_ 第三章 巨大食物.txt'
+2020-01-18 14:06:24 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/74943.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:06:24 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/95/74940.html> (referer: http://www.xbiquge.la/0/95/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/进化的四十六亿重奏_ 第四章 进化.txt'
+2020-01-18 14:06:24 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/93/75397.html> (referer: http://www.xbiquge.la/0/93/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/网游之三国王者_ 第九百五十章 准备.txt'
+2020-01-18 14:06:24 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://safe.zj.189.cn/notrecord//?source=d3d3LnhiaXF1Z2UubGEvMC85My83NTM4OC5odG1s&tagid=10011011&city=3540740> (referer: http://www.xbiquge.la/0/93/)
+2020-01-18 14:06:24 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/95/74943.html> (referer: http://www.xbiquge.la/0/95/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/进化的四十六亿重奏_ 第五章 注酸者.txt'
+2020-01-18 14:06:24 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://safe.zj.189.cn/notrecord//?source=d3d3LnhiaXF1Z2UubGEvMC85My83NTM4OC5odG1s&tagid=10011011&city=3540740>: HTTP status code is not handled or not allowed
+2020-01-18 14:06:24 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/74946.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:06:25 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/95/74946.html> (referer: http://www.xbiquge.la/0/95/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/进化的四十六亿重奏_ 第六章 阿米巴虫.txt'
+2020-01-18 14:06:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/74948.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:06:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/74949.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:06:25 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/95/74948.html> (referer: http://www.xbiquge.la/0/95/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/进化的四十六亿重奏_ 第八章 寒尽春来.txt'
+2020-01-18 14:06:25 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/95/74949.html> (referer: http://www.xbiquge.la/0/95/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/进化的四十六亿重奏_ 第九章 干细胞.txt'
+2020-01-18 14:06:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/74955.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:06:25 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/95/74955.html> (referer: http://www.xbiquge.la/0/95/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/进化的四十六亿重奏_ 第十二章 战争.txt'
+2020-01-18 14:06:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/74951.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:06:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/74957.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:06:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/74953.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:06:25 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/95/74951.html> (referer: http://www.xbiquge.la/0/95/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/进化的四十六亿重奏_ 第十章 岩.txt'
+2020-01-18 14:06:25 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/95/74957.html> (referer: http://www.xbiquge.la/0/95/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/进化的四十六亿重奏_ 第十三章 爆！.txt'
+2020-01-18 14:06:25 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/95/74953.html> (referer: http://www.xbiquge.la/0/95/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/进化的四十六亿重奏_ 第十一章 共生.txt'
+2020-01-18 14:06:25 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://safe.zj.189.cn/notrecord//?source=d3d3LnhiaXF1Z2UubGEvMC85NS83NDk0Ny5odG1s&tagid=10011011&city=3539456> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:06:25 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://safe.zj.189.cn/notrecord//?source=d3d3LnhiaXF1Z2UubGEvMC85NS83NDk0Ny5odG1s&tagid=10011011&city=3539456>: HTTP status code is not handled or not allowed
+2020-01-18 14:06:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/74961.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:06:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/74963.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:06:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/74960.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:06:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/74965.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:06:25 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/95/74961.html> (referer: http://www.xbiquge.la/0/95/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/进化的四十六亿重奏_ 第十五章 感染者.txt'
+2020-01-18 14:06:25 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/95/74963.html> (referer: http://www.xbiquge.la/0/95/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/进化的四十六亿重奏_ 第十六章 水流.txt'
+2020-01-18 14:06:25 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/95/74960.html> (referer: http://www.xbiquge.la/0/95/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/进化的四十六亿重奏_ 第十四章 黑夜惊魂.txt'
+2020-01-18 14:06:26 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/95/74965.html> (referer: http://www.xbiquge.la/0/95/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/进化的四十六亿重奏_ 第十七章 闪光的洞穴.txt'
+2020-01-18 14:06:26 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/74966.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:06:26 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/95/74966.html> (referer: http://www.xbiquge.la/0/95/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/进化的四十六亿重奏_ 第十八章 多细胞之路.txt'
+2020-01-18 14:06:26 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/74968.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:06:26 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/74970.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:06:26 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/95/74968.html> (referer: http://www.xbiquge.la/0/95/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/进化的四十六亿重奏_ 第十九章 突出.txt'
+2020-01-18 14:06:26 [scrapy.core.scraper] ERROR: Spider error processing <GET http://www.xbiquge.la/0/95/74970.html> (referer: http://www.xbiquge.la/0/95/)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/csdn/Desktop/scrapy_demo/scrapy_demo/spiders/biquge/biquge.py", line 31, in get_content
+    with open('/Users/csdn/Desktop/book/{}_{}.txt'.format(book_name, title_name), 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/csdn/Desktop/book/进化的四十六亿重奏_ 第二十章 进化！.txt'
+2020-01-18 14:06:26 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2020-01-18 14:06:26 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2020-01-18 14:06:26 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/74974.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:06:26 [scrapy.crawler] INFO: Received SIGINT twice, forcing unclean shutdown
+2020-01-18 14:06:26 [scrapy.core.downloader.handlers.http11] WARNING: Got data loss in http://www.xbiquge.la/0/95/74976.html. If you want to process broken responses set the setting DOWNLOAD_FAIL_ON_DATALOSS = False -- This message won't be shown in further requests
+2020-01-18 14:06:26 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET http://www.xbiquge.la/0/95/74976.html> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>, <twisted.python.failure.Failure twisted.web.http._DataLoss: Chunked decoder in 'CHUNK_LENGTH' state, still expecting more data to get to 'FINISHED' state.>]
+2020-01-18 14:06:26 [scrapy.core.downloader.handlers.http11] WARNING: Got data loss in http://www.xbiquge.la/0/95/74980.html. If you want to process broken responses set the setting DOWNLOAD_FAIL_ON_DATALOSS = False -- This message won't be shown in further requests
+2020-01-18 14:06:26 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET http://www.xbiquge.la/0/95/74980.html> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>, <twisted.python.failure.Failure twisted.web.http._DataLoss: Chunked decoder in 'CHUNK_LENGTH' state, still expecting more data to get to 'FINISHED' state.>]
+2020-01-18 14:06:26 [scrapy.core.downloader.handlers.http11] WARNING: Got data loss in http://www.xbiquge.la/0/93/75274.html. If you want to process broken responses set the setting DOWNLOAD_FAIL_ON_DATALOSS = False -- This message won't be shown in further requests
+2020-01-18 14:06:26 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET http://www.xbiquge.la/0/93/75274.html> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>, <twisted.python.failure.Failure twisted.web.http._DataLoss: Chunked decoder in 'CHUNK_LENGTH' state, still expecting more data to get to 'FINISHED' state.>]
+2020-01-18 14:06:26 [scrapy.core.downloader.handlers.http11] WARNING: Got data loss in http://www.xbiquge.la/0/95/74979.html. If you want to process broken responses set the setting DOWNLOAD_FAIL_ON_DATALOSS = False -- This message won't be shown in further requests
+2020-01-18 14:06:26 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET http://www.xbiquge.la/0/95/74979.html> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>, <twisted.python.failure.Failure twisted.web.http._DataLoss: Chunked decoder in 'CHUNK_LENGTH' state, still expecting more data to get to 'FINISHED' state.>]
+2020-01-18 14:09:27 [scrapy.utils.log] INFO: Scrapy 1.8.0 started (bot: scrapy_demo)
+2020-01-18 14:09:27 [scrapy.utils.log] INFO: Versions: lxml 4.4.2.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.10.0, Python 3.7.5 (default, Nov  1 2019, 02:16:38) - [Clang 10.0.0 (clang-1000.11.45.5)], pyOpenSSL 19.0.0 (OpenSSL 1.1.0j  20 Nov 2018), cryptography 2.4.2, Platform Darwin-17.7.0-x86_64-i386-64bit
+2020-01-18 14:09:27 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'scrapy_demo', 'COOKIES_ENABLED': False, 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'LOG_FILE': '2020_1_18.log', 'NEWSPIDER_MODULE': 'scrapy_demo.spiders', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'SPIDER_MODULES': ['scrapy_demo.spiders']}
+2020-01-18 14:09:27 [scrapy.extensions.telnet] INFO: Telnet Password: a7cec92837185f3e
+2020-01-18 14:09:27 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2020-01-18 14:09:27 [biquge] INFO: Reading start URLs from redis key 'biquge:start_urls' (batch size: 16, encoding: utf-8
+2020-01-18 14:09:27 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy_demo.middlewares.MayiProxyMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-01-18 14:09:27 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-01-18 14:09:27 [scrapy.middleware] INFO: Enabled item pipelines:
+['scrapy_demo.pipelines.CsdnBlogApiPipeline']
+2020-01-18 14:09:27 [scrapy.core.engine] INFO: Spider opened
+2020-01-18 14:09:27 [biquge] DEBUG: Resuming crawl (5227 requests scheduled)
+2020-01-18 14:09:27 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-01-18 14:09:27 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6027
+2020-01-18 14:09:28 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75003.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:28 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/74998.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:28 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75006.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:28 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75002.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:28 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75004.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:28 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75008.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:28 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75000.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:28 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75010.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:28 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75017.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:28 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET http://safe.zj.189.cn/notrecord//?source=d3d3LnhiaXF1Z2UubGEvMC85NS83NTAxOS5odG1s&tagid=10011011&city=3541257> from <GET http://www.xbiquge.la/0/95/75019.html>
+2020-01-18 14:09:28 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75012.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:28 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75018.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:29 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75015.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:29 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75013.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:29 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET http://safe.zj.189.cn/notrecord//?source=d3d3LnhiaXF1Z2UubGEvMC85NS83NTAyNy5odG1s&tagid=10011011&city=3540230> from <GET http://www.xbiquge.la/0/95/75027.html>
+2020-01-18 14:09:29 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75024.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:29 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75021.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:29 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75032.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:29 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75026.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:29 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75030.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:29 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75028.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:29 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75035.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:29 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75034.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:30 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://safe.zj.189.cn/notrecord//?source=d3d3LnhiaXF1Z2UubGEvMC85NS83NTAxOS5odG1s&tagid=10011011&city=3541257> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:30 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75038.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:30 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://safe.zj.189.cn/notrecord//?source=d3d3LnhiaXF1Z2UubGEvMC85NS83NTAxOS5odG1s&tagid=10011011&city=3541257>: HTTP status code is not handled or not allowed
+2020-01-18 14:09:30 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET http://safe.zj.189.cn/notrecord//?source=d3d3LnhiaXF1Z2UubGEvbm90cmVjb3JkLy8/c291cmNlPWQzZDNMbmhpYVhGMVoyVXViR0V2TUM4NU5TODNOVEF5Tnk1b2RHMXMmdGFnaWQ9MTAwMTEwMTEmY2l0eT0zNTQwMjMw&tagid=10011011&city=3540230> from <GET http://safe.zj.189.cn/notrecord//?source=d3d3LnhiaXF1Z2UubGEvMC85NS83NTAyNy5odG1s&tagid=10011011&city=3540230>
+2020-01-18 14:09:30 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75039.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:30 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75041.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:30 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75040.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:30 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET http://safe.zj.189.cn/notrecord//?source=d3d3LnhiaXF1Z2UubGEvMC85NS83NTA1NS5odG1s&tagid=10011011&city=3541762> from <GET http://www.xbiquge.la/0/95/75055.html>
+2020-01-18 14:09:30 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75043.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:30 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75044.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:30 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET http://safe.zj.189.cn/notrecord//?source=d3d3LnhiaXF1Z2UubGEvMC85NS83NTA1OC5odG1s&tagid=10011011&city=3539456> from <GET http://www.xbiquge.la/0/95/75058.html>
+2020-01-18 14:09:30 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75046.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:30 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75048.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:31 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET http://safe.zj.189.cn/notrecord//?source=d3d3LnhiaXF1Z2UubGEvbm90cmVjb3JkLy8/c291cmNlPWQzZDNMbmhpYVhGMVoyVXViR0V2Ym05MGNtVmpiM0prTHk4L2MyOTFjbU5sUFdRelpETk1ibWhwWVZoR01Wb3lWWFZpUjBWMlRVTTROVTVUT0ROT1ZFRjVUbmsxYjJSSE1YTW1kR0ZuYVdROU1UQXdNVEV3TVRFbVkybDBlVDB6TlRRd01qTXcmdGFnaWQ9MTAwMTEwMTEmY2l0eT0zNTQwMjMw&tagid=10011011&city=3541257> from <GET http://safe.zj.189.cn/notrecord//?source=d3d3LnhiaXF1Z2UubGEvbm90cmVjb3JkLy8/c291cmNlPWQzZDNMbmhpYVhGMVoyVXViR0V2TUM4NU5TODNOVEF5Tnk1b2RHMXMmdGFnaWQ9MTAwMTEwMTEmY2l0eT0zNTQwMjMw&tagid=10011011&city=3540230>
+2020-01-18 14:09:31 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75050.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:31 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75064.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:31 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75062.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:31 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET http://safe.zj.189.cn/notrecord//?source=d3d3LnhiaXF1Z2UubGEvMC85NS83NTA3Ny5odG1s&tagid=10011011&city=3541257> from <GET http://www.xbiquge.la/0/95/75077.html>
+2020-01-18 14:09:31 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75070.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:31 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75068.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:31 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75060.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:31 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75074.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:31 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://safe.zj.189.cn/notrecord//?source=d3d3LnhiaXF1Z2UubGEvMC85NS83NTA1NS5odG1s&tagid=10011011&city=3541762> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:31 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75065.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:31 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://safe.zj.189.cn/notrecord//?source=d3d3LnhiaXF1Z2UubGEvMC85NS83NTA1NS5odG1s&tagid=10011011&city=3541762>: HTTP status code is not handled or not allowed
+2020-01-18 14:09:31 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://safe.zj.189.cn/notrecord//?source=d3d3LnhiaXF1Z2UubGEvMC85NS83NTA1OC5odG1s&tagid=10011011&city=3539456> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:31 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75071.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:31 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://safe.zj.189.cn/notrecord//?source=d3d3LnhiaXF1Z2UubGEvMC85NS83NTA1OC5odG1s&tagid=10011011&city=3539456>: HTTP status code is not handled or not allowed
+2020-01-18 14:09:32 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://safe.zj.189.cn/notrecord//?source=d3d3LnhiaXF1Z2UubGEvbm90cmVjb3JkLy8/c291cmNlPWQzZDNMbmhpYVhGMVoyVXViR0V2Ym05MGNtVmpiM0prTHk4L2MyOTFjbU5sUFdRelpETk1ibWhwWVZoR01Wb3lWWFZpUjBWMlRVTTROVTVUT0ROT1ZFRjVUbmsxYjJSSE1YTW1kR0ZuYVdROU1UQXdNVEV3TVRFbVkybDBlVDB6TlRRd01qTXcmdGFnaWQ9MTAwMTEwMTEmY2l0eT0zNTQwMjMw&tagid=10011011&city=3541257> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:32 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75078.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:32 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://safe.zj.189.cn/notrecord//?source=d3d3LnhiaXF1Z2UubGEvbm90cmVjb3JkLy8/c291cmNlPWQzZDNMbmhpYVhGMVoyVXViR0V2Ym05MGNtVmpiM0prTHk4L2MyOTFjbU5sUFdRelpETk1ibWhwWVZoR01Wb3lWWFZpUjBWMlRVTTROVTVUT0ROT1ZFRjVUbmsxYjJSSE1YTW1kR0ZuYVdROU1UQXdNVEV3TVRFbVkybDBlVDB6TlRRd01qTXcmdGFnaWQ9MTAwMTEwMTEmY2l0eT0zNTQwMjMw&tagid=10011011&city=3541257>: HTTP status code is not handled or not allowed
+2020-01-18 14:09:32 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75086.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:32 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75089.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:32 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75088.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:32 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75079.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:32 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75091.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:32 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://safe.zj.189.cn/notrecord//?source=d3d3LnhiaXF1Z2UubGEvMC85NS83NTA3Ny5odG1s&tagid=10011011&city=3541257> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:32 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://safe.zj.189.cn/notrecord//?source=d3d3LnhiaXF1Z2UubGEvMC85NS83NTA3Ny5odG1s&tagid=10011011&city=3541257>: HTTP status code is not handled or not allowed
+2020-01-18 14:09:32 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75087.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:33 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET http://safe.zj.189.cn/notrecord//?source=d3d3LnhiaXF1Z2UubGEvMC85NS83NTEwNy5odG1s&tagid=10011011&city=3541762> from <GET http://www.xbiquge.la/0/95/75107.html>
+2020-01-18 14:09:33 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75100.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:33 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75094.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:33 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75096.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:33 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75098.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:33 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75102.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:33 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET http://safe.zj.189.cn/notrecord//?source=d3d3LnhiaXF1Z2UubGEvMC85NS83NTEwOC5odG1s&tagid=10011011&city=3539715> from <GET http://www.xbiquge.la/0/95/75108.html>
+2020-01-18 14:09:33 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75106.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:33 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75104.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:33 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75117.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:33 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://safe.zj.189.cn/notrecord//?source=d3d3LnhiaXF1Z2UubGEvMC85NS83NTEwNy5odG1s&tagid=10011011&city=3541762> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:33 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75111.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:33 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75115.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:33 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75114.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:33 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://safe.zj.189.cn/notrecord//?source=d3d3LnhiaXF1Z2UubGEvMC85NS83NTEwNy5odG1s&tagid=10011011&city=3541762>: HTTP status code is not handled or not allowed
+2020-01-18 14:09:34 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75119.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:34 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET http://safe.zj.189.cn/notrecord//?source=d3d3LnhiaXF1Z2UubGEvMC85NS83NTEyNy5odG1s&tagid=10011011&city=3541257> from <GET http://www.xbiquge.la/0/95/75127.html>
+2020-01-18 14:09:34 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75118.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:34 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75129.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:34 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75121.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:34 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET http://safe.zj.189.cn/notrecord//?source=d3d3LnhiaXF1Z2UubGEvMC85NS83NTEzMS5odG1s&tagid=10011011&city=3541760> from <GET http://www.xbiquge.la/0/95/75131.html>
+2020-01-18 14:09:34 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET http://safe.zj.189.cn/notrecord//?source=d3d3LnhiaXF1Z2UubGEvMC85NS83NTEyNS5odG1s&tagid=10011011&city=3540996> from <GET http://www.xbiquge.la/0/95/75125.html>
+2020-01-18 14:09:34 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75122.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:34 [scrapy.core.engine] DEBUG: Crawled (404) <GET http://safe.zj.189.cn/notrecord//?source=d3d3LnhiaXF1Z2UubGEvMC85NS83NTEwOC5odG1s&tagid=10011011&city=3539715> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:34 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75123.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:34 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response <404 http://safe.zj.189.cn/notrecord//?source=d3d3LnhiaXF1Z2UubGEvMC85NS83NTEwOC5odG1s&tagid=10011011&city=3539715>: HTTP status code is not handled or not allowed
+2020-01-18 14:09:34 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET http://safe.zj.189.cn/notrecord//?source=d3d3LnhiaXF1Z2UubGEvMC85NS83NTEzOS5odG1s&tagid=10011011&city=3540992> from <GET http://www.xbiquge.la/0/95/75139.html>
+2020-01-18 14:09:34 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75133.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:35 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2020-01-18 14:09:35 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2020-01-18 14:09:35 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.xbiquge.la/0/95/75138.html> (referer: http://www.xbiquge.la/0/95/)
+2020-01-18 14:09:35 [scrapy.crawler] INFO: Received SIGINT twice, forcing unclean shutdown
+2020-01-18 14:09:35 [scrapy.core.downloader.handlers.http11] WARNING: Got data loss in http://www.xbiquge.la/0/95/75140.html. If you want to process broken responses set the setting DOWNLOAD_FAIL_ON_DATALOSS = False -- This message won't be shown in further requests
+2020-01-18 14:09:35 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET http://www.xbiquge.la/0/95/75140.html> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>, <twisted.python.failure.Failure twisted.web.http._DataLoss: Chunked decoder in 'CHUNK_LENGTH' state, still expecting more data to get to 'FINISHED' state.>]
+2020-01-18 14:09:35 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET http://www.xbiquge.la/0/95/75144.html> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+2020-01-18 14:09:35 [scrapy.core.downloader.handlers.http11] WARNING: Got data loss in http://www.xbiquge.la/0/95/75135.html. If you want to process broken responses set the setting DOWNLOAD_FAIL_ON_DATALOSS = False -- This message won't be shown in further requests
+2020-01-18 14:09:35 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET http://www.xbiquge.la/0/95/75135.html> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>, <twisted.python.failure.Failure twisted.web.http._DataLoss: Chunked decoder in 'CHUNK_LENGTH' state, still expecting more data to get to 'FINISHED' state.>]
+2020-01-18 14:09:35 [scrapy.core.downloader.handlers.http11] WARNING: Got data loss in http://www.xbiquge.la/0/95/75142.html. If you want to process broken responses set the setting DOWNLOAD_FAIL_ON_DATALOSS = False -- This message won't be shown in further requests
+2020-01-18 14:09:35 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET http://www.xbiquge.la/0/95/75142.html> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>, <twisted.python.failure.Failure twisted.web.http._DataLoss: Chunked decoder in 'CHUNK_LENGTH' state, still expecting more data to get to 'FINISHED' state.>]
+2020-01-18 14:09:35 [scrapy.core.downloader.handlers.http11] WARNING: Got data loss in http://www.xbiquge.la/0/95/75137.html. If you want to process broken responses set the setting DOWNLOAD_FAIL_ON_DATALOSS = False -- This message won't be shown in further requests
+2020-01-18 14:09:35 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET http://www.xbiquge.la/0/95/75137.html> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>, <twisted.python.failure.Failure twisted.web.http._DataLoss: Chunked decoder in 'CHUNK_LENGTH' state, still expecting more data to get to 'FINISHED' state.>]
